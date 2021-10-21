@@ -1,10 +1,9 @@
+import './App.css';
 import React from 'react'
-import './Loginpage.css'
 import { Form, Input, Typography, Button } from 'antd'
+const { Title } = Typography;
 
-const { Title } = Typography
-export const Loginpage = () => {
-
+function App() {
   const onFinish = async (values) => {
     try {
       const response = await fetch(
@@ -28,9 +27,10 @@ export const Loginpage = () => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
-
   return (
-    <div className="wrapper">
+    <div
+      className="wrapper"
+    >
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -66,5 +66,8 @@ export const Loginpage = () => {
         </Form.Item>
       </Form>
     </div>
-  )
+  );
 }
+
+
+export default App;
